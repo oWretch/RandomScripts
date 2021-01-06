@@ -10,7 +10,6 @@ docker run \
     --detach \
     --restart always \
     --env EULA=TRUE \
-    --publish 19132:19132/udp \
     --env ServerIP=192.168.13.231 \
     --volume /volume1/docker/minecraft/survival:/data \
     itzg/minecraft-bedrock-server
@@ -25,7 +24,6 @@ docker run \
     --detach \
     --restart always \
     --env EULA=TRUE \
-    --publish 19132:19132/udp \
     --env ServerIP=192.168.13.232 \
     --volume /volume1/docker/minecraft/creative:/data \
     itzg/minecraft-bedrock-server

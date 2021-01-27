@@ -27,3 +27,17 @@ docker run \
     --env ServerIP=192.168.13.232 \
     --volume /volume1/docker/minecraft/creative:/data \
     itzg/minecraft-bedrock-server
+
+# Normal server
+docker run \
+    --name MinecraftNormal \
+    --hostname MinecraftNormal \
+    --net macvlan-13 \
+    --ip 192.168.13.233 \
+    --dns 192.168.13.1 \
+    --detach \
+    --restart always \
+    --env EULA=TRUE \
+    --env ServerIP=192.168.13.233 \
+    --volume /volume1/docker/minecraft/normal:/data \
+    itzg/minecraft-bedrock-server

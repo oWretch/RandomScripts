@@ -2,7 +2,7 @@
 
 # Survival server
 docker run \
-    --name MinecraftSurvival \
+    --name Minecraft-Survival \
     --hostname MinecraftSurvival \
     --net macvlan-13 \
     --ip 192.168.13.231 \
@@ -18,7 +18,7 @@ docker run \
 
 # Creative server
 docker run \
-    --name MinecraftCreative \
+    --name Minecraft-Creative \
     --hostname MinecraftCreative \
     --net macvlan-13 \
     --ip 192.168.13.232 \
@@ -34,7 +34,7 @@ docker run \
 
 # Normal server
 docker run \
-    --name MinecraftNormal \
+    --name Minecraft-Normal \
     --hostname MinecraftNormal \
     --net macvlan-13 \
     --ip 192.168.13.233 \

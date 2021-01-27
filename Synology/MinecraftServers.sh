@@ -7,6 +7,8 @@ docker run \
     --net macvlan-13 \
     --ip 192.168.13.231 \
     --dns 172.22.0.1 \
+    --interactive \
+    --tty \
     --detach \
     --restart always \
     --env EULA=TRUE \
@@ -21,6 +23,8 @@ docker run \
     --net macvlan-13 \
     --ip 192.168.13.232 \
     --dns 172.22.0.1 \
+    --interactive \
+    --tty \
     --detach \
     --restart always \
     --env EULA=TRUE \
@@ -35,6 +39,8 @@ docker run \
     --net macvlan-13 \
     --ip 192.168.13.233 \
     --dns 192.168.13.1 \
+    --interactive \
+    --tty \
     --detach \
     --restart always \
     --env EULA=TRUE \

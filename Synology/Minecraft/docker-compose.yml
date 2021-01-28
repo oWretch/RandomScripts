@@ -1,0 +1,63 @@
+version: "3.7"
+services:
+  manymine:
+    image: illiteratealliterator/manymine
+    container_name: ManyMine
+    ports:
+      - '19132:19132/udp'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+  
+  mc-survival:
+    container_name: Minecraft-Survival
+    image: itzg/minecraft-bedrock-server
+    tty: true
+    stdin_open: true
+    restart: always
+    labels:
+      - manymine.enable=true
+    environment:
+      - EULA=TRUE
+      - SERVER_PORT=30521
+    volumes:
+      - /volume1/docker/minecraft/survival:/data
+    ports:
+      - '30521:30521/udp'
+
+  mc-normal:
+    container_name: Minecraft-Normal
+    image: itzg/minecraft-bedrock-server
+    tty: true
+    stdin_open: true
+    restart: always
+    labels:
+      - manymine.enable=true
+    environment:
+      - EULA=TRUE
+      - SERVER_PORT=30522
+    volumes:
+      - /volume1/docker/minecraft/normal:/data
+    ports:
+      - '30522:30522/udp'
+
+  mc-creative:
+    container_name: Minecraft-Creative
+    image: itzg/minecraft-bedrock-server
+    tty: true
+    stdin_open: true
+    restart: always
+    labels:
+      - manymine.enable=true
+    environment:
+      - EULA=TRUE
+      - SERVER_PORT=30523
+    volumes:
+      - /volume1/docker/minecraft/creative:/data
+    ports:
+      - '30523:30523/udp'
+
+networks:
+  default:
+    external:
+      name: bridge-13
+    

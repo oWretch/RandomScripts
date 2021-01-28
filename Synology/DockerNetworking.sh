@@ -17,3 +17,9 @@ docker network create \
         --ip-range=192.168.13.224/27 \
         -o parent=bond0.13 \
         macvlan-13
+
+# Bridge VLAN 13
+docker network create \
+	    --driver=bridge \
+        -o parent=bond0.13 \
+        bridge-13

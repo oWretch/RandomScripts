@@ -9,10 +9,10 @@
  	--restart=always \
     --env EULA=TRUE \
     --volume /volume1/docker/portainer:/data \
- 	--volume /volume1/docker/unifi/cert:/certs:ro \
+ 	--volume /volume1/docker/certs/dailyfuneral.com:/certs:ro \
  	--volume /var/run/docker.sock:/var/run/docker.sock \
  	portainer/portainer-ce \
  	--bind :443 \
  	--ssl \
- 	--sslcert /certs/cert+chain.pem \
+ 	--sslcert /certs/fullchain.pem \
  	--sslkey /certs/privkey.pem

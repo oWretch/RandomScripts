@@ -12,6 +12,5 @@
     --volume /volume1/docker/unifi/log:/unifi/log \
     --volume /volume1/docker/unifi/init.d:/unifi/init.d \
     --volume /volume1/docker/unifi/run:/var/run/unifi \
- 	--volume /volume1/docker/certs/dailyfuneral.com:/unifi/certs:ro \
- 	--user unifi \
+ 	--volume /volume1/docker/certs/dailyfuneral.com:/unifi/cert:ro \
  	jacobalberty/unifi:latest

@@ -25,8 +25,7 @@ cd /usr/local/share/acme.sh
           --domain "dailyfuneral.com" \
           --domain "*.dailyfuneral.com" \
           --domain "*.home.dailyfuneral.com" \
-          --dns "dns_cf" \
-          --ocsp-must-staple
+          --dns "dns_cf"
 
 # Deploy the certificate into Synology
 export SYNO_Username='Admin_Username'

@@ -22,9 +22,8 @@ export CF_Zone_ID="DNS_ZONE_ID"
 cd /usr/local/share/acme.sh
 ./acme.sh --issue \
           --home . \
-          --domain "dailyfuneral.com" \
-          --domain "*.dailyfuneral.com" \
-          --domain "*.home.dailyfuneral.com" \
+          --domain "<url>.dailyfuneral.com" \
+          --domain "<url>.home.dailyfuneral.com" \
           --dns "dns_cf"
 
 # Deploy the certificate into Synology
@@ -33,7 +32,7 @@ export SYNO_Password='Admin_Password!123'
 export SYNO_Certificate=""
 ./acme.sh --deploy \
           --home . \
-          --domain "dailyfuneral.com" \
+          --domain "<url>.dailyfuneral.com" \
           --deploy-hook synology_dsm
 
 # Deploy the certificate for Docker users

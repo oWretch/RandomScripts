@@ -35,10 +35,11 @@ export SYNO_Certificate=""
           --domain "<url>.dailyfuneral.com" \
           --deploy-hook synology_dsm
 
-# Deploy the certificate for Docker users
+# Deploy the certificate for Docker containers
 ./acme.sh --install-cert \
           --home . \
           --domain "dailyfuneral.com" \
-          --cert-file /volume1/docker/certs/dailyfuneral.com/cert.pem \
-		  --key-file /volume1/docker/certs/dailyfuneral.com/privkey.pem \
-		  --fullchain-file /volume1/docker/certs/dailyfuneral.com/fullchain.pem
+          --cert-file /volume2/docker/<container>/certs/cert.pem \
+          --key-file /volume2/docker/<container>/certs/privkey.pem \
+          --fullchain-file /volume1/docker/<container>/certs/fullchain.pem \
+          --reloadcmd "/usr/local/bin/docker restart <container>"

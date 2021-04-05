@@ -43,3 +43,9 @@ export SYNO_Certificate=""
           --key-file /volume2/docker/<container>/certs/privkey.pem \
           --fullchain-file /volume1/docker/<container>/certs/fullchain.pem \
           --reloadcmd "/usr/local/bin/docker restart <container>"
+
+# Create & deploy the certificate for Plex
+./acme.sh --issue \
+          --home . \
+          --domain "<url>.dailyfuneral.com" \
+          --renew-hook "./acme.sh --to-pkcs12 --home . --domain <url>.dailyfuneral.com --password <PfxPassword> && cp -f ./<url>.dailyfuneral.com/<url>.dailyfuneral.com.pfx /volume2/Plex && chown plex:users /volume2/Plex/<url>.dailyfuneral.com.pfx && /var/packages/Plex\ Media\ Server/scripts/start-stop-status stop && /var/packages/Plex\ Media\ Server/scripts/start-stop-status start"

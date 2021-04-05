@@ -1,7 +1,7 @@
 # UniFi Controller
 docker run \
     --name=UniFi-Controller \
-    --hostname unifi \
+    --hostname unifi.home.dailyfuneral.com \
     --user unifi \
     --net macvlan1 \
     --ip 172.22.0.224 \

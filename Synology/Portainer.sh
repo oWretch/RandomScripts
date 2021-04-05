@@ -1,7 +1,7 @@
 # Portainer-CE 2.0 Server
 docker run \
     --name=portainer \
-    --hostname portainer \
+    --hostname portainer.home.dailyfuneral.com \
     --net macvlan1 \
     --ip 172.22.0.251 \
     --dns 172.22.0.1 \
